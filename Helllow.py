@@ -1,22 +1,7 @@
-import turtle
-game_python = turtle.Turtle()
+def my_calculator(x):
+  return 5*x
 
+print(my_calculator(1))
+print(my_calculator(2))
+print(my_calculator(3))
 
-def call():
-    game_python.forward(100)
-    game_python.right(90)
-    game_python.forward(100)
-    game_python.right(90)
-    game_python.forward(100)
-    game_python.right(90)
-    game_python.forward(100)
-
-def callback():
-    game_python.forward(100)
-    game_python.left(90)
-
-
-call()
-callback()
-call()
-print("I Enjoy the Full process")
