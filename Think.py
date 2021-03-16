@@ -1,34 +1,22 @@
-# Stack implementation in python
-
-# Creating a stack
-def create_stack():
-    stack = []
-    return stack
-
-
-# Creating an empty stack
-def check_empty(stack):
-    return len(stack) == 0
+books = []
+books.append("C ")
+books.append("C++ ")
+books.append("Java  ")
+books.append("python")
 
 
-# Adding items into the stack
-def push(stack, item):
-    stack.append(item)
-    print("pushed item: " + item)
+books.pop()
+print("The top Book is", books[-1])
+
+books.pop()
+print("NOw the Book is ", books[-1])
+
+books.pop()
+print("YEs :the top book is ", books[-1])
+
+books.pop()
+print(books)
 
 
-# Removing an element from the stack
-def pop(stack):
-    if (check_empty(stack)):
-        return "stack is empty"
-
-    return stack.pop()
-
-
-stack = create_stack()
-push(stack, str(1))
-push(stack, str(2))
-push(stack, str(3))
-push(stack, str(4))
-print("popped item: " + pop(stack))
-print("stack after popping an element: " + str(stack))
+if not books:
+    print("No Language Is no More")
