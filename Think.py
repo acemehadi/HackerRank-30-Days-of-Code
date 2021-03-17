@@ -1,22 +1,30 @@
-books = []
-books.append("C ")
-books.append("C++ ")
-books.append("Java  ")
-books.append("python")
+def add(a,b):
+    result=a+b
+    print(result)
 
+def sub(a,b):
+    result=a+b
+    print(result)
 
-books.pop()
-print("The top Book is", books[-1])
+def multi(a,b):
+    result=a*b
+    print(result)
 
-books.pop()
-print("NOw the Book is ", books[-1])
+def divide(a,b):
+    result=a/b
+    print(result)
 
-books.pop()
-print("YEs :the top book is ", books[-1])
+a=int(input("Enter your number"))
+b=int(input("enter your another number"))
+operator=input("enter your Operator")
 
-books.pop()
-print(books)
-
-
-if not books:
-    print("No Language Is no More")
+if operator=="+":
+    add(a,b)
+elif operator=="-":
+    sub(a,b)
+elif operator=="*":
+    multi(a,b)
+elif operator=="/":
+    divide(a,b)
+else:
+    print("Please enter Valid Operator")
