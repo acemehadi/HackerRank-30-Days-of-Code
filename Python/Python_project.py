@@ -1,23 +1,34 @@
-from tkinter import *
-
-window = Tk()
+import sqlite3
 
 
-def Buy():
-    print(e1_vaule.get())
-    miles = int(e1_vaule.get())+1
-    t1.insert(END, miles)
+def Creat_table():
+
+    conn = sqlite3.connect("lite.db")
+    cur = conn.cursor()
+    cur.execute(
+        "CREATE TABLE IF NOT EXISTS Store(item TEXT,quantity INTEGER,price US)")
+    conn.commit()
+    conn.close()
 
 
-b1 = Button(window, text="Buy", command=Buy)
-b1.grid(row='0', column='0')
-
-e1_vaule = StringVar()
-e1 = Entry(window, textvariable=e1_vaule)
-e1.grid(row='0', column='1')
-
-t1 = Text(window, height='0', width='20')
-t1.grid(row='0', column='2')
+def insert_data(item, quantity, price):
+    conn = sqlite3.connect("lite.db")
+    cur = conn.cursor()
+    cur.execute("INSERT INTO Store VALUES(?,?,?)", (item, quantity, price))
+    conn.commit()
+    conn.close()
 
 
-window.mainloop()
+insert_data("Coffecup", 2, 100)
+
+
+def view():
+    conn = sqlite3.connect("lite.db")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM Store")
+    row = cur.fetchall()
+    conn.close()
+    print(row)
+
+
+view()
