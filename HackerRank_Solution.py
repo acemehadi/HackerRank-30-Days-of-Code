@@ -1,9 +1,18 @@
-import sys
+class Calculator:
 
-s = input(":").strip()
+    def power(self, n, p):
+        if n < 0 or p < 0:
+            raise Exception("n and p should be non-negative")
+        return pow(n, p)
 
-try:
-    s = int(s)
-    print(s)
-except:
-    print("Bad String")
+
+myCalculator = Calculator()
+
+T = int(input("_"))
+for i in range(T):
+    n, p = map(int, input().split())
+    try:
+        ans = myCalculator.power(n, p)
+        print(ans)
+    except Exception as e:
+        print(e)
